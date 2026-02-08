@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neon calculator</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer" 
+    />
+
+</head>
+<body>
+    <div class="theme-toggle">
+        <span id="theme-icon">🌞</span>
+        <label class="switch">
+            <input type="checkbox" id="toggle-theme">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+   <div class="calculator">
+    <div class="msg">
+        <h4>Neon Calculator</h4>
+    </div>
+    <input type="text" id="display" value="0" class="idle" disabled>
+    <div class="buttons">
+      <button id="clear">C</button>
+      <button class="btn operator">/</button>
+      <button class="btn operator">*</button>
+
+      <i class="fa-solid fa-arrow-left"  id="back"></i>
+
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn operator">-</button>
+
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn operator">+</button> 
+
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      
+      <button id="equals">=</button>
+
+      <button class="btn" id="zero">0</button>
+      <button class="btn">.</button>     
+    </div>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>

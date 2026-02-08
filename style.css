@@ -1,0 +1,322 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #002252;
+}
+
+.calculator {
+  background: black;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 260px;
+
+  
+  box-shadow:
+    0 0 15px rgba(0, 255, 200, 0.25),
+    0 0 30px rgba(0, 255, 200, 0.15);
+
+  animation: neonPulse 3s infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {
+    box-shadow:
+      0 0 15px rgba(0, 255, 200, 0.3),
+      0 0 30px rgba(0, 255, 200, 0.2);
+  }
+  to {
+    box-shadow:
+      0 0 25px rgba(0, 255, 200, 0.6),
+      0 0 50px rgba(0, 255, 200, 0.4);
+  }
+}
+
+
+.msg{
+    color:aqua;
+    padding: 5px;
+    font-size: 1.8rem;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-shadow:
+    0 0 5px #00ffd5,
+    0 0 15px #00ffd5,
+    0 0 30px #00ffd5;
+}
+
+#display {
+  width: 92%;
+  height: 50px;
+  font-size: 1.5rem;
+  text-align: right;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  background: #111;
+  color: #00ffd5;
+
+  box-shadow:
+    inset 0 0 10px rgba(0, 255, 213, 0.3),
+    0 0 10px rgba(0, 255, 213, 0.2);
+
+  text-shadow:
+    0 0 5px #00ffd5,
+    0 0 15px #00ffd5;
+}
+
+#display.idle {
+  color: rgba(255,255,255,0.35);  /* dim grey */
+  animation: idleGlow 2.5s ease-in-out infinite;
+}
+
+/* optional soft glow animation when idle */
+@keyframes idleGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50px;
+  gap: 10px;
+  
+
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  height: 100%;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  background: #1a1a1a;
+  color: #00ffd5;
+
+  box-shadow:
+    inset 0 0 5px rgba(0, 255, 213, 0.2),
+    0 0 5px rgba(0, 255, 213, 0.15);
+
+  transition: 0.3s ease;
+
+}
+
+button:active {
+  box-shadow:
+    inset 0 0 15px rgba(255,255,255,0.6),
+    0 0 10px rgba(0,255,213,0.8);
+}
+
+
+#back {
+  background: #44017e;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+  text-shadow: 0 0 5px #44017e, 0 0 15px #44017e;
+}
+
+#back:hover {
+  transform: translateX(-5px);
+  transition: 0.3s;
+  background: #5bbbcb;
+}
+
+button:hover {
+  background: #5bbbcb;
+  transform: translateX(-5px);
+  transition: 0.3s;
+  filter: drop-shadow(0 0 8px #2b75ff);
+}
+
+.operator {
+  background: #c41e69;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow:
+    inset 0 0 6px rgba(255, 43, 138, 0.3),
+    0 0 8px rgba(255, 43, 138, 0.4);
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#equals {
+  grid-column: 4;
+  grid-row: span 2;
+  background: #28a745;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  color: #1a1a1a;
+
+  box-shadow:
+    inset 0 0 5px rgba(0, 255, 213, 0.2),
+    0 0 5px rgba(0, 255, 213, 0.15);
+
+  transition: 0.3s ease;
+
+}
+
+#display{
+  color:white;
+}
+#clear {
+  background: #dc2235;
+  color: white;
+  font-size: 1.4rem;
+}
+
+#zero {
+  grid-column: span 2;
+  text-align: center;
+}
+
+/* Theme Toggle Icon Glow */
+#theme-icon {
+  transition: 0.4s ease-in-out;
+  text-shadow: 0 0 5px #000, 0 0 10px #000; /* Default for dark theme */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Custom Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+.switch input { display: none; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 50px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  transition: 0.4s;
+}
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #4caf50;
+}
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background: #f5f5f5;
+}
+body.light-mode .calculator {
+  background: #fff;
+  background: linear-gradient(135deg, #fff, #f0f0f0);
+
+  box-shadow:
+    0 0 15px rgba(1, 21, 17, 0.25),
+    0 0 30px rgba(1, 21, 17, 0.25);
+
+  animation: neonPulse 3s infinite alternate;
+}
+@keyframes neonPulse {
+  from {
+    box-shadow:
+      0 0 15px rgba(0, 255, 200, 0.3),
+      0 0 30px rgba(0, 255, 200, 0.2);
+  }
+  to {
+    box-shadow:
+      0 0 15px rgba(4, 85, 69, 0.25),
+      0 0 30px rgba(4, 85, 69, 0.25);
+  }
+}
+
+body.light-mode .button {
+  background: #e0e0e0;
+  color: #000;
+  box-shadow: 0 0 15px #ccc;
+}
+body.light-mode .button:hover {
+  box-shadow: 0 0 25px #bbb;
+}
+
+body.light-mode #display {
+  background: #fdfdfd;
+  color: #000;
+  box-shadow: inset 0 0 10px #ccc;
+}
+
+.calculator, .button, #display {
+  transition: 0.4s ease-in-out;
+}
+
+/* Title color in light mode */
+body.light-mode .msg {
+  color: #000; /* Black text in light mode */
+  text-shadow: 0 0 5px #555, 0 0 10px #aaa; /* Subtle glow for light mode */
+}
+
+/* Light mode glow for toggle */
+body.light-mode #theme-icon {
+  color: #fff; /* White icon in light mode */
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff; /* Glow in light mode */
+}
